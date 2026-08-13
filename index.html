@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kayseri Doğan Ortopedi</title>
+<style>
+:root{
+  --navy:#071d4d;
+  --blue:#0847ad;
+  --blue2:#0d52bd;
+  --text:#102652;
+  --muted:#53657d;
+  --line:#dfe7f0;
+  --soft:#f5f9ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--text);
+  background:#fff;
+  font-family:"Segoe UI",Arial,Helvetica,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.container{width:min(1440px,calc(100% - 72px));margin:auto}
+
+/* TOP BAR */
+.topbar{
+  height:68px;
+  background:var(--navy);
+  color:#fff;
+}
+.topbar-inner{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:42px;
+}
+.top-address{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:15px;
+  line-height:1.25;
+  font-weight:650;
+}
+.top-address svg{flex:0 0 auto}
+.top-meta{display:flex;align-items:center;gap:95px}
+.top-meta-item{
+  display:flex;align-items:center;gap:13px;
+  font-size:15px;font-weight:600;
+  white-space:nowrap;
+}
+
+/* MAIN HEADER */
+.header{
+  height:176px;
+  background:#fff;
+  border-bottom:1px solid #e7edf4;
+}
+.nav{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:42px;
+}
+.logo{
+  width:470px;
+  flex:0 0 470px;
+}
+.logo img{
+  width:100%;
+  height:125px;
+  object-fit:contain;
+  object-position:left center;
+}
+.links{
+  display:flex;
+  align-items:center;
+  gap:52px;
+  height:100%;
+}
+.links a{
+  position:relative;
+  display:flex;
+  align-items:center;
+  height:100%;
+  font-size:17px;
+  font-weight:700;
+  color:#172849;
+}
+.links a.active,.links a:hover{color:var(--blue)}
+.links a.active:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:51px;
+  height:3px;border-radius:3px;background:var(--blue);
+}
+.phone{
+  display:flex;align-items:center;gap:18px;
+  white-space:nowrap;
+}
+.phone-icon{
+  width:60px;height:60px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--navy);
+}
+.phone-number{
+  font-size:25px;font-weight:750;line-height:1.1;
+}
+.phone-label{
+  margin-top:6px;
+  font-size:16px;color:#596b82;font-weight:600;
+}
+
+/* HERO */
+.hero{
+  height:455px;
+  background:var(--soft);
+}
+.hero-grid{
+  height:100%;
+  display:grid;
+  grid-template-columns:48% 52%;
+}
+.hero-copy{
+  padding:52px 42px 50px 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.eyebrow{
+  color:var(--blue);
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:5px;
+  margin-bottom:23px;
+}
+.hero-title{
+  margin:0;
+  font-size:53px;
+  line-height:1.08;
+  letter-spacing:-1.7px;
+  font-weight:750;
+  color:#0d2b61;
+}
+.hero-title span{display:block}
+.hero-rule{
+  width:68px;height:3px;
+  margin:27px 0 21px;
+  background:var(--blue);
+}
+.hero-text{
+  max-width:570px;
+  margin:0 0 31px;
+  font-size:17px;
+  line-height:1.5;
+  color:#344a66;
+}
+.actions{display:flex;gap:24px}
+.btn{
+  height:64px;
+  min-width:235px;
+  padding:0 23px;
+  border-radius:9px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  font-size:16px;
+  font-weight:800;
+}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-outline{border:2px solid var(--blue);color:var(--blue);background:#fff}
+.hero-image{overflow:hidden}
+.hero-image img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* SERVICES */
+.services{
+  padding:30px 0 28px;
+  background:#fff;
+}
+.services-head{text-align:center;margin-bottom:28px}
+.service-label{
+  margin-bottom:1px;
+  color:var(--blue);
+  font-size:15px;
+  font-weight:850;
+  letter-spacing:5px;
+}
+.service-title{
+  margin:0;
+  font-size:29px;
+  line-height:1.2;
+  font-weight:750;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:34px;
+}
+.card{
+  height:138px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  display:flex;
+  align-items:center;
+  gap:26px;
+  padding:22px 30px;
+  background:#fff;
+}
+.card-icon{
+  width:84px;height:84px;
+  flex:0 0 84px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:#edf4ff;
+}
+.card-icon svg{width:50px;height:50px}
+.card h3{margin:0 0 10px;font-size:18px}
+.card p{
+  margin:0;
+  color:#435772;
+  font-size:14px;
+  line-height:1.55;
+}
+
+/* CONTACT */
+.contact-wrap{padding:18px 0 42px}
+.contact{
+  min-height:190px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1.02fr 1.45fr;
+  background:#fff;
+}
+.contact-col{padding:28px 38px}
+.contact-col + .contact-col{border-left:1px solid var(--line)}
+.contact h3{
+  margin:0 0 14px;
+  color:var(--blue);
+  font-size:15px;
+  letter-spacing:.5px;
+}
+.contact-row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin:10px 0;
+  font-size:14px;
+  line-height:1.35;
+}
+.contact-row svg{flex:0 0 auto;margin-top:1px}
+.map{
+  position:relative;
+  min-height:190px;
+  background:#eaf0f4;
+  overflow:hidden;
+}
+.map img{
+  width:100%;height:100%;
+  object-fit:cover;
+}
+.map-card{
+  position:absolute;
+  right:14px;top:14px;
+  width:300px;
+  background:#fff;
+  border-radius:7px;
+  box-shadow:0 8px 24px rgba(12,37,70,.17);
+  padding:15px 18px;
+}
+.map-card strong{display:block;font-size:14px;line-height:1.35}
+.map-card p{
+  margin:7px 0;
+  font-size:11.5px;
+  line-height:1.35;
+  color:#465b74;
+}
+.map-card a{font-size:12px;font-weight:800;color:var(--blue)}
+
+/* FOOTER */
+.footer{
+  height:52px;
+  background:var(--navy);
+  color:#fff;
+  font-size:12px;
+}
+.footer-inner{
+  height:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* MOBILE */
+.menu{display:none}
+@media(max-width:1250px){
+  .container{width:min(1160px,calc(100% - 42px))}
+  .logo{width:400px;flex-basis:400px}
+  .logo img{height:108px}
+  .links{gap:25px}
+  .phone-number{font-size:20px}
+  .top-meta{gap:35px}
+  .hero-title{font-size:46px}
+}
+@media(max-width:980px){
+  .topbar{display:none}
+  .header{height:90px}
+  .logo{width:300px;flex-basis:300px}
+  .logo img{height:76px}
+  .phone{display:none}
+  .menu{
+    display:grid;place-items:center;
+    width:44px;height:44px;
+    border:1px solid var(--line);
+    border-radius:8px;background:#fff;
+    color:var(--navy);font-size:22px;
+  }
+  .links{
+    display:none;
+    position:absolute;
+    top:90px;left:18px;right:18px;
+    height:auto;padding:8px;
+    flex-direction:column;gap:0;
+    background:#fff;border:1px solid var(--line);
+    border-radius:9px;
+    box-shadow:0 12px 25px rgba(10,30,60,.12);
+    z-index:50;
+  }
+  .links.open{display:flex}
+  .links a{height:48px;width:100%;padding:0 14px}
+  .links a.active:after{display:none}
+  .hero{height:auto}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-copy{padding:48px 0}
+  .hero-image{height:360px}
+  .cards{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+  .contact-col + .contact-col{border-left:0;border-top:1px solid var(--line)}
+  .map{min-height:240px}
+}
+@media(max-width:600px){
+  .container{width:calc(100% - 28px)}
+  .logo{width:240px;flex-basis:240px}
+  .logo img{height:65px}
+  .hero-title{font-size:38px}
+  .actions{flex-direction:column}
+  .btn{width:100%}
+  .hero-image{height:300px}
+  .card{height:auto;min-height:125px;padding:17px}
+  .map-card{left:14px;right:14px;width:auto}
+  .footer{height:auto;padding:14px 0}
+  .footer-inner{gap:7px;flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="top-address">
+      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4">
+        <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.2"/>
+      </svg>
+      <span>GÜLÜK MAHALLESİ OTEL GEÇİDİ SOKAK BOZATLIPAŞA İŞHANI NO: 6/A<br>MELİKGAZİ / KAYSERİ</span>
+    </div>
+    <div class="top-meta">
+      <div class="top-meta-item">
+        <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+          <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>
+        </svg>
+        doganortopedi@hotmail.com
+      </div>
+      <div class="top-meta-item">
+        <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+        </svg>
+        Hafta içi: 09:00 - 18:00
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#anasayfa">
+      <img src="logo-reference.png" alt="Kayseri Doğan Ortopedi Protez Ortez Yapım ve Uygulama Merkezi">
+    </a>
+
+    <nav class="links" id="links">
+      <a class="active" href="#anasayfa">Ana Sayfa</a>
+      <a href="#hizmetler">Hizmetlerimiz</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+
+    <a class="phone" href="tel:+903523364895">
+      <span class="phone-icon">
+        <svg width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+          <path d="M6.7 3.5 9 3l2 4.2-2.2 1.7a14.2 14.2 0 0 0 6.3 6.3l1.7-2.2 4.2 2 .5 2.3a2 2 0 0 1-2 2.4C11 19.4 4.6 13 4.3 5.5a2 2 0 0 1 2.4-2Z"/>
+        </svg>
+      </span>
+      <span>
+        <div class="phone-number">0 352 336 4895</div>
+        <div class="phone-label">Bize ulaşın</div>
+      </span>
+    </a>
+
+    <button class="menu" id="menu" aria-label="Menüyü aç">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="anasayfa">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">K A Y S E R İ&nbsp;&nbsp; D O Ğ A N&nbsp;&nbsp; O R T O P E D İ</div>
+      <h1 class="hero-title">Protez, Ortez ve <span>Kişiye Özel Tabanlık</span></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-text">
+        Uzman kadromuz ve modern tekniklerimizle,<br>
+        ihtiyaçlarınıza özel çözümler üretiyoruz.<br>
+        Daha konforlu ve özgür bir yaşam için yanınızdayız.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:+903523364895">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+            <path d="M6.7 3.5 9 3l2 4.2-2.2 1.7a14.2 14.2 0 0 0 6.3 6.3l1.7-2.2 4.2 2 .5 2.3a2 2 0 0 1-2 2.4C11 19.4 4.6 13 4.3 5.5a2 2 0 0 1 2.4-2Z"/>
+          </svg>
+          Bize Ulaşın&nbsp;&nbsp; 0 352 336 4895
+        </a>
+        <a class="btn btn-outline" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/place/Do%C4%9Fan+Ortopedi+Kayseri+Protez-Ortez+Yap%C4%B1m+ve+Uygulama+Merkezi/@38.7202557,35.4767065,558m/data=!3m2!1e3!4b1!4m16!1m9!4m8!1m0!1m6!1m2!1s0x152b12017097917d:0x20121e3c944e84b5!2zRG_En2FuIE9ydG9wZWRpIEtheXNlcmkgUHJvdGV6LU9ydGV6IFlhcMSxbSB2ZSBVeWd1bGFtYSBNZXJrZXppLCBEw7x2ZW7Dtm7DvCBNZXlkYW7EsSwgT3RlbCBTb2suIEJvemF0bMSxIFBhxZ9hIMSwxZ8gSGFuxLEgNi9DLCAzODAzMCBLYXlzZXJp!2m2!1d35.4813199!2d38.7202516!3m5!1s0x152b12017097917d:0x20121e3c944e84b5!8m2!3d38.7202516!4d35.4813199!16s%2Fg%2F11gdkx6zpm?entry=ttu">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.2"/>
+          </svg>
+          Konumumuz
+        </a>
+      </div>
+    </div>
+    <div class="hero-image"><img src="hero-photo.jpg" alt="Protez ve ortez uygulama merkezi"></div>
+  </div>
+</section>
+
+<section class="services" id="hizmetler">
+  <div class="container">
+    <div class="services-head">
+      <div class="service-label">H İ Z M E T L E R İ M İ Z</div>
+      <h2 class="service-title">Size Özel Ortopedik Çözümler</h2>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M25 10h13v18H25z" fill="#0750b6"/><path d="M26 28h11v10H26z" fill="#0750b6"/>
+            <path d="M28 38c0 6-1 9-4 12l-6 5c-2 2-1 5 2 5h12c3 0 6-2 6-5v-7c0-4-1-7-2-10z" fill="#0750b6"/>
+            <path d="M38 42h8v12c0 4-2 6-6 6h-6" fill="#0750b6"/>
+          </svg>
+        </div>
+        <div><h3>Protez Uygulamaları</h3><p>İhtiyaçlarınıza özel protez<br>uygulamaları ile hareket<br>özgürlüğünüzü geri kazanmanıza<br>destek oluyoruz.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M22 10h18v13H22zM20 23h20v11H20zM24 34h13v16H24z" fill="#0750b6"/>
+            <circle cx="43" cy="30" r="7" fill="#0750b6"/><path d="M20 48h17v8H20z" fill="#0750b6"/>
+          </svg>
+        </div>
+        <div><h3>Ortez Uygulamaları</h3><p>Ortez çözümlerimizle tedavi<br>sürecinizi destekliyor, günlük<br>yaşamınızı daha konforlu hale<br>getiriyoruz.</p></div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 64 64" fill="none">
+            <path d="M34 7c9 6 13 17 12 28-1 11-8 20-17 22-6 1-11-2-13-8-3-8 1-15 6-21 4-5 5-11 4-16 2-3 5-5 8-5Z" fill="#0750b6"/>
+            <path d="M25 28c4-4 8-5 13-2M24 36c5-3 10-3 14 0" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div><h3>Kişiye Özel Tabanlık</h3><p>Ayak yapınıza uygun kişiye özel<br>tabanlıklarla ağrılarınızı azaltıyor,<br>konforunuzu artırıyoruz.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="hakkimizda" style="height:0;overflow:hidden"></section>
+
+<section class="contact-wrap" id="iletisim">
+  <div class="container">
+    <div class="contact">
+      <div class="contact-col">
+        <h3>İLETİŞİM</h3>
+        <div class="contact-row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#09265d" stroke-width="2.3"><path d="M6.7 3.5 9 3l2 4.2-2.2 1.7a14.2 14.2 0 0 0 6.3 6.3l1.7-2.2 4.2 2 .5 2.3a2 2 0 0 1-2 2.4C11 19.4 4.6 13 4.3 5.5a2 2 0 0 1 2.4-2Z"/></svg>
+          <a href="tel:+903523364895">0 352 336 4895</a>
+        </div>
+        <div class="contact-row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#09265d" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          <a href="mailto:doganortopedi@hotmail.com">doganortopedi@hotmail.com</a>
+        </div>
+        <div class="contact-row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#09265d" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Hafta içi: 09:00 - 18:00
+        </div>
+      </div>
+
+      <div class="contact-col">
+        <h3>ADRES</h3>
+        <div class="contact-row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#09265d" stroke-width="2.2"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.2"/></svg>
+          <span>Gülük Mahallesi Otel Geçidi Sokak<br>Bozatlıpaşa İşhanı No: 6/A<br>Melikgazi / Kayseri</span>
+        </div>
+        <a class="btn btn-outline" style="height:43px;min-width:268px;font-size:13px;margin-top:8px" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/place/Do%C4%9Fan+Ortopedi+Kayseri+Protez-Ortez+Yap%C4%B1m+ve+Uygulama+Merkezi/@38.7202557,35.4767065,558m/data=!3m2!1e3!4b1!4m16!1m9!4m8!1m0!1m6!1m2!1s0x152b12017097917d:0x20121e3c944e84b5!2zRG_En2FuIE9ydG9wZWRpIEtheXNlcmkgUHJvdGV6LU9ydGV6IFlhcMSxbSB2ZSBVeWd1bGFtYSBNZXJrZXppLCBEw7x2ZW7Dtm7DvCBNZXlkYW7EsSwgT3RlbCBTb2suIEJvemF0bMSxIFBhxZ9hIMSwxZ8gSGFuxLEgNi9DLCAzODAzMCBLYXlzZXJp!2m2!1d35.4813199!2d38.7202516!3m5!1s0x152b12017097917d:0x20121e3c944e84b5!8m2!3d38.7202516!4d35.4813199!16s%2Fg%2F11gdkx6zpm?entry=ttu">
+          ⌖&nbsp;&nbsp; Google Maps'te Görüntüle
+        </a>
+      </div>
+
+      <div class="map">
+        <img src="map-reference.jpg" alt="Doğan Ortopedi Kayseri harita konumu">
+        <div class="map-card">
+          <strong>Doğan Ortopedi Kayseri<br>Protez-Ortez Yapım ve<br>Uygulama Merkezi</strong>
+          <p>Otel Geçidi Sokak Bozatlıpaşa İşhanı<br>No: 6/A Melikgazi / Kayseri</p>
+          <a target="_blank" rel="noopener" href="https://www.google.com/maps/place/Do%C4%9Fan+Ortopedi+Kayseri+Protez-Ortez+Yap%C4%B1m+ve+Uygulama+Merkezi/@38.7202557,35.4767065,558m/data=!3m2!1e3!4b1!4m16!1m9!4m8!1m0!1m6!1m2!1s0x152b12017097917d:0x20121e3c944e84b5!2zRG_En2FuIE9ydG9wZWRpIEtheXNlcmkgUHJvdGV6LU9ydGV6IFlhcMSxbSB2ZSBVeWd1bGFtYSBNZXJrZXppLCBEw7x2ZW7Dtm7DvCBNZXlkYW7EsSwgT3RlbCBTb2suIEJvemF0bMSxIFBhxZ9hIMSwxZ8gSGFuxLEgNi9DLCAzODAzMCBLYXlzZXJp!2m2!1d35.4813199!2d38.7202516!3m5!1s0x152b12017097917d:0x20121e3c944e84b5!8m2!3d38.7202516!4d35.4813199!16s%2Fg%2F11gdkx6zpm?entry=ttu">Haritada Görüntüle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© 2026 Kayseri Doğan Ortopedi. Tüm hakları saklıdır.</span>
+    <span>Protez - Ortez Yapım ve Uygulama Merkezi</span>
+  </div>
+</footer>
+
+<script>
+const menu=document.getElementById("menu");
+const links=document.getElementById("links");
+menu.addEventListener("click",()=>{
+  links.classList.toggle("open");
+  menu.textContent=links.classList.contains("open")?"✕":"☰";
+});
+</script>
+</body>
+</html>
