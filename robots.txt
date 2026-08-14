@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://do535462.github.io/dogan-ortopedi/sitemap.xml
